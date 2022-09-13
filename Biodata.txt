@@ -1,0 +1,4 @@
+NIM		: 18121622
+Nama		: Robi Aziz Zuama
+Alamat		: Bekasi
+Program Studi	: Sistem Informasi (S1)
