@@ -1,19 +1,24 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Biodata extends CI_Controller {
+class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('v_form_bio');
+		$data['meta']=['title'=>'Beritangoding',];
+        $this->load->view('home',$data);
 	}
-    public function cetak()
+    public function about()
     {
-        $data=[
-            'nim'=>$this->input->post('nim'),
-            'nama'=>$this->input->post('nama'),
-            'prodi'=>$this->input->post('prodi')
-        ];
-        $this->load->view('v_data_bio',$data);
+        $data['meta']=['title'=>'About Beritangoding',];
+        $this->load->view('about',$data);
+    }
+    public function contact()
+    {
+        $data['meta']=['title'=>'Contact Us',];
+        if ($this->input->method()=='post'){
+            print_r($this->input->post());
+        }
+        $this->load->view('contact',$data);
     }
 }
