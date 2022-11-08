@@ -1,18 +1,27 @@
-<h1><?php echo $judul?></h1>
-<table border="1">
-    <tr>
-        <th>Nama</th>
-        <th>Jenis Kelamin</th>
-        <th>Alamat</th>
-        <th>Pekerjaan</th>
-    </tr>
-    <?php foreach ($bio as $b ) {?>
+<main role="main" class="container">
+    <div class="card">
+        <div class="card-header"><h4><?php echo $judul?></h4></div>
+        <div class="card-body"> <a href="<?php echo base_url('web/create');?>" class="btn btn-success">Tambah Data</a></div>
+        <table class="table table-bordered">
         <tr>
-            <td><?php echo $b->nama?></td>
-            <td><?php echo $b->jk?></td>
-            <td><?php echo $b->alamat?></td>
-            <td><?php echo $b->pekerjaan?></td>
+            <th>Nama</th>
+            <th>Jenis Kelamin</th>
+            <th>Alamat</th>
+            <th>Pekerjaan</th>
+            <th>Aksi</th>
         </tr>
-    <?php }?>
-</table>
-<BR></BR>
+        <?php foreach ($bio as $b ) {?>
+            <tr>
+                <td><?php echo $b->nama?></td>
+                <td><?php echo $b->jk?></td>
+                <td><?php echo $b->alamat?></td>
+                <td><?php echo $b->pekerjaan?></td>
+                <td>
+                <a href="<?php echo base_url(); ?>web/edit/<?php echo $b->id; ?>" class="btn btn-warning">Ubah</a>
+				<a href="<?php echo base_url(); ?>web/delete/<?php echo $b->id; ?>" class="btn btn-danger">Hapus</a>
+                </td>
+            </tr>
+        <?php }?>
+    </table>
+    </div>
+</main>
